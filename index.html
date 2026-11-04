@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <title>RSM CHAT</title>
+  <link rel="stylesheet" href="./style.css?v=3">
+</head>
+<body>
+
+  <!-- LOGIN -->
+  <section id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <div class="logo">RSM</div>
+      <h1>RSM CHAT</h1>
+      <p class="subtitle">Private Messaging</p>
+
+      <form id="loginForm">
+        <input id="email" type="email"
+          placeholder="Email Address"
+          autocomplete="username" required>
+
+        <input id="password" type="password"
+          placeholder="Password"
+          autocomplete="current-password" required>
+
+        <button id="loginBtn" type="submit">LOGIN</button>
+      </form>
+
+      <p id="loginError" class="error"></p>
+      <p id="appStatus" class="app-status">Connecting...</p>
+      <p class="secure-text">🔒 Only Two Private Users</p>
+    </div>
+  </section>
+
+  <!-- CHAT -->
+  <section id="chatScreen" class="chat-screen" hidden>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">R</div>
+        <div>
+          <h2>RSM CHAT</h2>
+          <p id="connectionStatus">Connecting...</p>
+        </div>
+      </div>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </header>
+
+    <div class="conversation-header">
+      <div id="otherAvatar" class="avatar">R</div>
+      <div class="conversation-info">
+        <h3 id="otherName">Private Chat</h3>
+        <p id="onlineStatus">Offline</p>
+      </div>
+      <span class="lock-icon">🔒</span>
+    </div>
+
+    <main id="messages" class="messages">
+      <div class="welcome">
+        <div class="welcome-icon">💬</div>
+        <h3>Welcome to RSM CHAT</h3>
+        <p>Your private conversation starts here.</p>
+      </div>
+    </main>
+
+    <div id="typingStatus" class="typing-status"></div>
+
+    <div id="replyPreview" class="reply-preview" hidden>
+      <div>
+        <small>Replying to</small>
+        <p id="replyText"></p>
+      </div>
+      <button id="cancelReply" type="button">×</button>
+    </div>
+
+    <div id="editPreview" class="edit-preview" hidden>
+      <span>✏️ Editing message</span>
+      <button id="cancelEdit" type="button">×</button>
+    </div>
+
+    <div id="emojiPanel" class="emoji-panel" hidden>
+      <button type="button">😀</button>
+      <button type="button">😂</button>
+      <button type="button">😍</button>
+      <button type="button">❤️</button>
+      <button type="button">🥰</button>
+      <button type="button">🔥</button>
+      <button type="button">👍</button>
+      <button type="button">🙏</button>
+      <button type="button">😎</button>
+      <button type="button">😘</button>
+      <button type="button">😭</button>
+      <button type="button">👏</button>
+    </div>
+
+    <form id="messageForm" class="message-form">
+      <button type="button" id="emojiBtn" class="emoji-btn">☺</button>
+      <input id="messageInput" type="text"
+        placeholder="Message..."
+        maxlength="2000" autocomplete="off">
+      <button id="sendBtn" type="submit" class="send-btn">➤</button>
+    </form>
+
+    <footer class="footer">RSM CHAT • Private Messaging</footer>
+  </section>
+
+  <script type="module" src="./app.js?v=3"></script>
+</body>
+</html>
